@@ -12,7 +12,7 @@ var client = new twilio(accountSid,authToken);
 app.use(cors())
 
 var corsOptions = {
-    origin: '*',
+    origin: 'https://xlsxserver.herokuapp.com/getNames',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
