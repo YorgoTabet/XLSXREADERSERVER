@@ -28,7 +28,7 @@ app.get("/getNames", cors(corsOptions),function(req, res){
         && cellAsString !=='m' && cellAsString[1]>=1){
             if(cellAsString[0]==='B'){
                 names.push(ws[cell].v);
-            }else
+            }/*else
             
             //if cell being read is a phone number we nee to send a message.
             if(cellAsString[0]==='C'){
@@ -48,7 +48,7 @@ app.get("/getNames", cors(corsOptions),function(req, res){
                     alert(err.toString);
                 }
                
-            }
+            }*/
         }
     }
     console.log(names);
