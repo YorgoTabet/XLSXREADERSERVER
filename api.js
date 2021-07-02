@@ -11,8 +11,13 @@ var client = new twilio(accountSid,authToken);
 
 app.use(cors())
 
+var corsOptions = {
+    origin: 'http://example.com',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
 
-app.get("/getNames",function(req, res){
+
+app.get("/getNames", cors(corsOptions),function(req, res){
     var wb = xlsx.readFile('bd.xls');
     var ws = wb.Sheets[wb.SheetNames[0]];   
     xlsx.utils.sheet_to_json();
